@@ -4,36 +4,36 @@ ALERT mq_messages_stuck
 
 ALERT mq_auth_ms_down
   IF rabbitmq_queue_consumers{queue="auth.request"} == 0
-  FOR 30seg
+  FOR 30s
 
 ALERT mq_confirmation_ms_down
   IF rabbitmq_queue_consumers{queue="confirmation.request"} == 0
-  FOR 30seg
+  FOR 30s
 
 ALERT mq_notification_ms_down
   IF rabbitmq_queue_consumers{queue="notification.request"} == 0
-  FOR 30seg
+  FOR 30s
 
 ALERT mq_pulsa_ms_down
   IF rabbitmq_queue_consumers{queue="pulsa.request"} == 0
-  FOR 30seg
+  FOR 30s
 
 ALERT mq_pulsa_gateway_ms_down
   IF rabbitmq_queue_consumers{queue="pulsa_gateway.request"} == 0
-  FOR 30seg
+  FOR 30s
 
 ALERT mq_saldo_ms_down
   IF rabbitmq_queue_consumers{queue="saldo.request"} == 0
-  FOR 30seg
+  FOR 30s
 
 ALERT mq_user_ms_down
   IF rabbitmq_queue_consumers{queue="user.request"} == 0
-  FOR 30seg
+  FOR 30s
 
 ALERT mq_user_ms_down
   IF rabbitmq_queue_consumers{queue="user.request"} == 0
-  FOR 30seg
+  FOR 30s
 
 ALERT mq_transaction_ms_down
   IF rabbitmq_queue_consumers{queue="transaction.request"} == 0
-  FOR 30seg
+  FOR 30s
