@@ -1,9 +1,12 @@
-global:                                                                         
+global:
   scrape_interval:     15s
   evaluation_interval: 15s
-  external_labels:                                                              
-      monitor: 'exporter-metrics'                                                
-                                                                                
+  external_labels:
+      monitor: 'exporter-metrics'
+
+rule_files:
+  - '/etc/prom-conf/alert.rules'
+
 scrape_configs:
 - job_name: 'HostsMetrics'
   dns_sd_configs:
@@ -24,7 +27,12 @@ scrape_configs:
 - job_name: 'rancher-api'
   target_groups:
     - targets:
-        - 'prometheus-rancher-exporter:9010' 
+        - 'prometheus-rancher-exporter:9010'
+
+- job_name: 'rabbitmq-api'
+  target_groups:
+    - targets:
+        - 'prometheus-rabbitmq-exporter:9080'
 
 - job_name: 'Prometheus'
   target_groups:
