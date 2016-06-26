@@ -1,6 +1,6 @@
 ALERT mq_messages_stuck
   IF sum(rabbitmq_queue_messages) > 0
-  FOR 1m
+  FOR 45s
 
 ALERT mq_auth_ms_down
   IF rabbitmq_queue_consumers{queue="auth.request"} == 0

@@ -34,6 +34,11 @@ scrape_configs:
     - targets:
         - 'prometheus-rabbitmq-exporter:9080'
 
+- job_name: 'statsd-api'
+  target_groups:
+    - targets:
+        - 'prometheus-statsd-exporter:9102'
+
 - job_name: 'Prometheus'
   target_groups:
     - targets:
